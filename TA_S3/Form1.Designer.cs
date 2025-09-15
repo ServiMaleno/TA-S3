@@ -44,135 +44,146 @@
             this.btnBuscarMuebles = new System.Windows.Forms.Button();
             this.btnMostrarRegistrados = new System.Windows.Forms.Button();
             this.btnMostrarStock = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgMuebles = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMuebles)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 40);
+            this.label1.Location = new System.Drawing.Point(41, 49);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(51, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Código";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 88);
+            this.label2.Location = new System.Drawing.Point(41, 108);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 131);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(44, 161);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(41, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Stock";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 175);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(44, 215);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.Size = new System.Drawing.Size(46, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Precio";
             // 
             // tbCodigo
             // 
-            this.tbCodigo.Location = new System.Drawing.Point(109, 37);
+            this.tbCodigo.Location = new System.Drawing.Point(145, 46);
+            this.tbCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbCodigo.Name = "tbCodigo";
-            this.tbCodigo.Size = new System.Drawing.Size(100, 20);
+            this.tbCodigo.Size = new System.Drawing.Size(132, 22);
             this.tbCodigo.TabIndex = 4;
             // 
             // tbNombre
             // 
-            this.tbNombre.Location = new System.Drawing.Point(109, 85);
+            this.tbNombre.Location = new System.Drawing.Point(145, 105);
+            this.tbNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(100, 20);
+            this.tbNombre.Size = new System.Drawing.Size(132, 22);
             this.tbNombre.TabIndex = 5;
             // 
             // tbStock
             // 
-            this.tbStock.Location = new System.Drawing.Point(109, 128);
+            this.tbStock.Location = new System.Drawing.Point(145, 158);
+            this.tbStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbStock.Name = "tbStock";
-            this.tbStock.Size = new System.Drawing.Size(100, 20);
+            this.tbStock.Size = new System.Drawing.Size(132, 22);
             this.tbStock.TabIndex = 6;
             // 
             // tbPrecio
             // 
-            this.tbPrecio.Location = new System.Drawing.Point(109, 172);
+            this.tbPrecio.Location = new System.Drawing.Point(145, 212);
+            this.tbPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbPrecio.Name = "tbPrecio";
-            this.tbPrecio.Size = new System.Drawing.Size(100, 20);
+            this.tbPrecio.Size = new System.Drawing.Size(132, 22);
             this.tbPrecio.TabIndex = 7;
             // 
             // btnRegistrarMuebles
             // 
-            this.btnRegistrarMuebles.Location = new System.Drawing.Point(240, 35);
+            this.btnRegistrarMuebles.Location = new System.Drawing.Point(320, 43);
+            this.btnRegistrarMuebles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistrarMuebles.Name = "btnRegistrarMuebles";
-            this.btnRegistrarMuebles.Size = new System.Drawing.Size(112, 23);
+            this.btnRegistrarMuebles.Size = new System.Drawing.Size(149, 28);
             this.btnRegistrarMuebles.TabIndex = 8;
             this.btnRegistrarMuebles.Text = "Registrar Muebles";
             this.btnRegistrarMuebles.UseVisualStyleBackColor = true;
             // 
             // btnMostrarTodos
             // 
-            this.btnMostrarTodos.Location = new System.Drawing.Point(240, 83);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(320, 102);
+            this.btnMostrarTodos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
-            this.btnMostrarTodos.Size = new System.Drawing.Size(112, 23);
+            this.btnMostrarTodos.Size = new System.Drawing.Size(149, 28);
             this.btnMostrarTodos.TabIndex = 9;
             this.btnMostrarTodos.Text = "Mostrar Todos";
             this.btnMostrarTodos.UseVisualStyleBackColor = true;
             // 
             // btnEliminarMueble
             // 
-            this.btnEliminarMueble.Location = new System.Drawing.Point(240, 126);
+            this.btnEliminarMueble.Location = new System.Drawing.Point(320, 155);
+            this.btnEliminarMueble.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminarMueble.Name = "btnEliminarMueble";
-            this.btnEliminarMueble.Size = new System.Drawing.Size(112, 23);
+            this.btnEliminarMueble.Size = new System.Drawing.Size(149, 28);
             this.btnEliminarMueble.TabIndex = 10;
             this.btnEliminarMueble.Text = "Eliminar un Mueble";
             this.btnEliminarMueble.UseVisualStyleBackColor = true;
             // 
             // btnEliminarTodos
             // 
-            this.btnEliminarTodos.Location = new System.Drawing.Point(240, 170);
+            this.btnEliminarTodos.Location = new System.Drawing.Point(320, 209);
+            this.btnEliminarTodos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminarTodos.Name = "btnEliminarTodos";
-            this.btnEliminarTodos.Size = new System.Drawing.Size(112, 23);
+            this.btnEliminarTodos.Size = new System.Drawing.Size(149, 28);
             this.btnEliminarTodos.TabIndex = 11;
             this.btnEliminarTodos.Text = "Eliminar Todos";
             this.btnEliminarTodos.UseVisualStyleBackColor = true;
             // 
             // btnOrdenarPrecio
             // 
-            this.btnOrdenarPrecio.Location = new System.Drawing.Point(370, 35);
+            this.btnOrdenarPrecio.Location = new System.Drawing.Point(493, 43);
+            this.btnOrdenarPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOrdenarPrecio.Name = "btnOrdenarPrecio";
-            this.btnOrdenarPrecio.Size = new System.Drawing.Size(158, 23);
+            this.btnOrdenarPrecio.Size = new System.Drawing.Size(211, 28);
             this.btnOrdenarPrecio.TabIndex = 12;
             this.btnOrdenarPrecio.Text = "Ordenar Muebles por Precio";
             this.btnOrdenarPrecio.UseVisualStyleBackColor = true;
             // 
             // btnBuscarMuebles
             // 
-            this.btnBuscarMuebles.Location = new System.Drawing.Point(370, 83);
+            this.btnBuscarMuebles.Location = new System.Drawing.Point(493, 102);
+            this.btnBuscarMuebles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscarMuebles.Name = "btnBuscarMuebles";
-            this.btnBuscarMuebles.Size = new System.Drawing.Size(158, 23);
+            this.btnBuscarMuebles.Size = new System.Drawing.Size(211, 28);
             this.btnBuscarMuebles.TabIndex = 13;
             this.btnBuscarMuebles.Text = "Buscar Muebles por Nombre";
             this.btnBuscarMuebles.UseVisualStyleBackColor = true;
             // 
             // btnMostrarRegistrados
             // 
-            this.btnMostrarRegistrados.Location = new System.Drawing.Point(370, 126);
+            this.btnMostrarRegistrados.Location = new System.Drawing.Point(493, 155);
+            this.btnMostrarRegistrados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMostrarRegistrados.Name = "btnMostrarRegistrados";
-            this.btnMostrarRegistrados.Size = new System.Drawing.Size(158, 23);
+            this.btnMostrarRegistrados.Size = new System.Drawing.Size(211, 28);
             this.btnMostrarRegistrados.TabIndex = 14;
             this.btnMostrarRegistrados.Text = "Mostrar Muebles Registrados";
             this.btnMostrarRegistrados.UseVisualStyleBackColor = true;
@@ -180,27 +191,30 @@
             // 
             // btnMostrarStock
             // 
-            this.btnMostrarStock.Location = new System.Drawing.Point(370, 170);
+            this.btnMostrarStock.Location = new System.Drawing.Point(493, 209);
+            this.btnMostrarStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMostrarStock.Name = "btnMostrarStock";
-            this.btnMostrarStock.Size = new System.Drawing.Size(158, 23);
+            this.btnMostrarStock.Size = new System.Drawing.Size(211, 28);
             this.btnMostrarStock.TabIndex = 15;
             this.btnMostrarStock.Text = "Mostrar Muebles en Stock";
             this.btnMostrarStock.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgMuebles
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(548, 37);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(304, 150);
-            this.dataGridView1.TabIndex = 16;
+            this.dgMuebles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgMuebles.Location = new System.Drawing.Point(47, 270);
+            this.dgMuebles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgMuebles.Name = "dgMuebles";
+            this.dgMuebles.RowHeadersWidth = 51;
+            this.dgMuebles.Size = new System.Drawing.Size(657, 185);
+            this.dgMuebles.TabIndex = 16;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 268);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(746, 488);
+            this.Controls.Add(this.dgMuebles);
             this.Controls.Add(this.btnMostrarStock);
             this.Controls.Add(this.btnMostrarRegistrados);
             this.Controls.Add(this.btnBuscarMuebles);
@@ -217,9 +231,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Inventario de Tienda de Muebles";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMuebles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,7 +258,7 @@
         private System.Windows.Forms.Button btnBuscarMuebles;
         private System.Windows.Forms.Button btnMostrarRegistrados;
         private System.Windows.Forms.Button btnMostrarStock;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgMuebles;
     }
 }
 
