@@ -16,5 +16,10 @@ namespace TA_S3
         {
             InitializeComponent();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //Botón Mostrar Cantidad Total de Muebles Registrados
+        }
     }
 }
