@@ -16,7 +16,7 @@ namespace TA_S3.Services
         //Registrar	
         public bool Registrar(Mueble mueble)
         {
-            if (muebleRepository.Existe(mueble.Codigo))
+            if (muebleRepository.Existe(mueble.Codigo.ToString()))
             {
                 return false;
             }
