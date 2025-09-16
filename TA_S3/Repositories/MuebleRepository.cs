@@ -16,6 +16,18 @@ namespace TA_S3.Repositories
         public bool Existe(String codigo)
         {
             return muebles.Exists(mueble => mueble.Codigo.Equals(codigo));
-        } 
+        }
+
+        //Listar todo (Percy)
+        public List<Mueble> ListarTodo()
+        {
+            return muebles;
+        }
+
+        //Registrar (Percy)
+        public void Registrar(Mueble mueble)
+        {
+            muebles.Add(mueble);
+        }
     }
 }
