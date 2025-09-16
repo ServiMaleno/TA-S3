@@ -55,6 +55,10 @@ namespace TA_S3
                 MessageBox.Show("Código ya registrado");
                 return;
             }
+            else
+            {
+                MessageBox.Show("Registrado");
+            }
             //cierre
         }
     }
