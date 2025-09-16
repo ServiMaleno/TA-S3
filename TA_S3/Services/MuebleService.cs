@@ -3,10 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TA_S3.Entities;
 
 namespace TA_S3.Services
 {
     internal class MuebleService
     {
+        //Llamar al repositorio
+        private MuebleService muebleService = new MuebleService();
+
+        //Registrar	
+        public bool Registrar(Mueble mueble)
+        {
+            if (muebleService.Existe(mueble.Codigo))
+            {
+                return false;
+            }
+            else
+            {
+                muebleService.Registrar(mueble);
+                return true;
+            }
+        }
+
+        //Listar todo
+        public List<Mueble> ListarTodo()
+        {
+            return muebleService.ListarTodo()
+
+        }
     }
 }
