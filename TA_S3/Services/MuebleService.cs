@@ -11,18 +11,18 @@ namespace TA_S3.Services
     internal class MuebleService
     {
         //Llamar al repositorio
-        private MuebleService muebleService = new MuebleService();
+        private MuebleRepository muebleRepository = new MuebleRepository();
 
         //Registrar	
         public bool Registrar(Mueble mueble)
         {
-            if (muebleService.Existe(mueble.Codigo))
+            if (muebleRepository.Existe(mueble.Codigo))
             {
                 return false;
             }
             else
             {
-                muebleService.Registrar(mueble);
+                muebleRepository.Registrar(mueble);
                 return true;
             }
         }
@@ -30,7 +30,7 @@ namespace TA_S3.Services
         //Listar todo
         public List<Mueble> ListarTodo()
         {
-            return muebleService.ListarTodo();
+            return muebleRepository.ListarTodo();
 
         }
     }
