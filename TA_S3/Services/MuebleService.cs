@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TA_S3.Entities;
+using TA_S3.Repositories;
 
 namespace TA_S3.Services
 {
@@ -29,7 +30,7 @@ namespace TA_S3.Services
         //Listar todo
         public List<Mueble> ListarTodo()
         {
-            return muebleService.ListarTodo()
+            return muebleService.ListarTodo();
 
         }
     }
