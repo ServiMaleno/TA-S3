@@ -46,9 +46,16 @@ namespace TA_S3.Services
             List<Mueble> muebles = muebleRepository.ListarTodo();
             return muebles.Where(mueble => mueble.Nombre.IndexOf(nombre, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
         }
-
+        
         //Eliminar Todos los muebles registrados
-
+        public void EliminarTodos()
+        {
+            List<Mueble> muebles = muebleRepository.ListarTodo();
+            foreach (var mueble in muebles.ToList())
+            {
+                muebleRepository.Eliminar(mueble.Codigo.ToString());
+            }
+        }
 
     }
 }
