@@ -23,6 +23,28 @@ namespace TA_S3
             InitializeComponent();
         }
 
+        private void MostrarMuebles(List<Mueble> muebles)
+        {
+            //limpiar DataGridView
+            dgMuebles.DataSource = null;
+
+            if (muebles.Count == 0)
+            {
+                lblTotalRegistros.Text = "0";
+                lblTotalStock.Text = "0";
+                return;
+            }
+            else
+            {
+                dgMuebles.DataSource= muebles;
+                lblTotalRegistros.Text= muebles.Count.ToString();
+
+                int stockTotal = 0;
+                muebles.ForEach(mueble => stockTotal += mueble.Stock);
+                lblTotalStock.Text = stockTotal.ToString();
+            }
+        }
+
         private void button7_Click(object sender, EventArgs e)
         {
             //Botón Mostrar Cantidad Total de Muebles Registrados
@@ -47,7 +69,7 @@ namespace TA_S3
 	        };
 
             //Registrar
-            muebleService.Registrar(mueble);
+          
             bool registrado = muebleService.Registrar(mueble);
 
             if (registrado == false)
@@ -55,11 +77,47 @@ namespace TA_S3
                 MessageBox.Show("Código ya registrado");
                 return;
             }
-            else
+            
+
+            // Mostrar
+            MostrarMuebles(muebleService.ListarTodo());
+            limpiarCampos();
+        }
+
+        public void limpiarCampos()
+        {
+            tbCodigo.Clear();
+            tbNombre.Clear();
+            tbStock.Clear();
+            tbPrecio.Clear();
+            
+        }
+
+        private void btnEliminarMueble_Click(object sender, EventArgs e)
+        {
+            // Validación de seleccion e fila
+            if (dgMuebles.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Registrado");
+                MessageBox.Show("Seleccionar un registro para eliminar");
+                return;
             }
-            //cierre
+            //Obtener código
+            String codigo = dgMuebles.SelectedRows[0].Cells[0].Value.ToString();
+
+            //eliminar código
+            muebleService.Eliminar(codigo);
+
+            // Mostrar nuevamente
+            MostrarMuebles(muebleService.ListarTodo());
+
+        }
+
+        private void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+            //mostrar lista
+            MostrarMuebles(muebleService.ListarTodo());
+            limpiarCampos();
+            tbCodigo.Focus();
         }
     }
 }

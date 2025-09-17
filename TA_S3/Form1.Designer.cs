@@ -45,6 +45,10 @@
             this.btnMostrarRegistrados = new System.Windows.Forms.Button();
             this.btnMostrarStock = new System.Windows.Forms.Button();
             this.dgMuebles = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblTotalRegistros = new System.Windows.Forms.Label();
+            this.lblTotalStock = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgMuebles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,6 +136,7 @@
             this.btnMostrarTodos.TabIndex = 9;
             this.btnMostrarTodos.Text = "Mostrar Todos";
             this.btnMostrarTodos.UseVisualStyleBackColor = true;
+            this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
             // btnEliminarMueble
             // 
@@ -141,6 +146,7 @@
             this.btnEliminarMueble.TabIndex = 10;
             this.btnEliminarMueble.Text = "Eliminar un Mueble";
             this.btnEliminarMueble.UseVisualStyleBackColor = true;
+            this.btnEliminarMueble.Click += new System.EventHandler(this.btnEliminarMueble_Click);
             // 
             // btnEliminarTodos
             // 
@@ -191,17 +197,57 @@
             // dgMuebles
             // 
             this.dgMuebles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgMuebles.Location = new System.Drawing.Point(35, 219);
+            this.dgMuebles.Location = new System.Drawing.Point(34, 208);
             this.dgMuebles.Name = "dgMuebles";
             this.dgMuebles.RowHeadersWidth = 51;
             this.dgMuebles.Size = new System.Drawing.Size(493, 150);
             this.dgMuebles.TabIndex = 16;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(35, 365);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Total de Registros:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(38, 389);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 13);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Total de Stock:";
+            // 
+            // lblTotalRegistros
+            // 
+            this.lblTotalRegistros.AutoSize = true;
+            this.lblTotalRegistros.Location = new System.Drawing.Point(174, 365);
+            this.lblTotalRegistros.Name = "lblTotalRegistros";
+            this.lblTotalRegistros.Size = new System.Drawing.Size(13, 13);
+            this.lblTotalRegistros.TabIndex = 19;
+            this.lblTotalRegistros.Text = "0";
+            // 
+            // lblTotalStock
+            // 
+            this.lblTotalStock.AutoSize = true;
+            this.lblTotalStock.Location = new System.Drawing.Point(174, 389);
+            this.lblTotalStock.Name = "lblTotalStock";
+            this.lblTotalStock.Size = new System.Drawing.Size(13, 13);
+            this.lblTotalStock.TabIndex = 20;
+            this.lblTotalStock.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 396);
+            this.ClientSize = new System.Drawing.Size(659, 414);
+            this.Controls.Add(this.lblTotalStock);
+            this.Controls.Add(this.lblTotalRegistros);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.dgMuebles);
             this.Controls.Add(this.btnMostrarStock);
             this.Controls.Add(this.btnMostrarRegistrados);
@@ -246,6 +292,10 @@
         private System.Windows.Forms.Button btnMostrarRegistrados;
         private System.Windows.Forms.Button btnMostrarStock;
         private System.Windows.Forms.DataGridView dgMuebles;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTotalRegistros;
+        private System.Windows.Forms.Label lblTotalStock;
     }
 }
 

@@ -33,5 +33,16 @@ namespace TA_S3.Services
             return muebleRepository.ListarTodo();
 
         }
+
+        //eliminar segun su codigo
+        public void Eliminar(String codigo)
+        {
+            muebleRepository.Eliminar(codigo);
+        }
+
+
+
+
+
     }
 }
