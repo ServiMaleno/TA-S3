@@ -37,8 +37,19 @@ namespace TA_S3.Repositories
         {
             muebles.RemoveAll(mueble => mueble.Codigo.Equals(codigo));
         }
-    
-    
+
+        //Buscar muebles por coincidencia en el nombre (Franco)
+        public List<Mueble> BuscarPorNombre(String nombre)
+        {
+            return muebles.Where(mueble => mueble.Nombre.IndexOf(nombre, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+        }
+
+        //Eliminar Todos los muebles registrados (Franco)
+        public void EliminarTodos()
+        {
+            muebles.Clear();
+        }
+
     }
-    
+
 }
