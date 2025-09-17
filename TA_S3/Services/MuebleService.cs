@@ -40,12 +40,14 @@ namespace TA_S3.Services
             muebleRepository.Eliminar(codigo);
         }
 
-        //comentariod PRUEBA
+        //Buscar muebles por coincidencia en el nombre
+        public List<Mueble> BuscarPorNombre(String nombre)
+        {
+            List<Mueble> muebles = muebleRepository.ListarTodo();
+            return muebles.Where(mueble => mueble.Nombre.IndexOf(nombre, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+        }
 
-        //radio
-
-        //Fundamentos
-
+        //Eliminar Todos los muebles registrados
 
 
     }
