@@ -23,6 +23,12 @@ namespace TA_S3
             InitializeComponent();
         }
 
+        private void ActualizarGrid()
+        {
+            dgvMuebles.DataSource = null;
+            dgvMuebles.DataSource = listaMuebles;
+        }
+
         private void MostrarMuebles(List<Mueble> muebles)
         {
             //limpiar DataGridView
@@ -47,8 +53,9 @@ namespace TA_S3
 
         private void button7_Click(object sender, EventArgs e)
         {
-            //Botón Mostrar Cantidad Total de Muebles Registrados
+            MostrarMuebles(muebleService.ListarTodo());
         }
+
 
         private void btnRegistrarMuebles_Click(object sender, EventArgs e)
         {
@@ -119,5 +126,17 @@ namespace TA_S3
             limpiarCampos();
             tbCodigo.Focus();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string texto = tbBuscar.Text.Trim().ToLower();
+
+            var resultado = muebleService.ListarTodo()
+                            .Where(m => m.Nombre.ToLower().Contains(texto))
+                            .ToList();
+
+            MostrarMuebles(resultado);
+        }
+
     }
 }
