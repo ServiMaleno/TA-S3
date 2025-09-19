@@ -38,17 +38,18 @@
             this.tbPrecio = new System.Windows.Forms.TextBox();
             this.btnRegistrarMuebles = new System.Windows.Forms.Button();
             this.btnMostrarTodos = new System.Windows.Forms.Button();
-            this.btnEliminarMueble = new System.Windows.Forms.Button();
             this.btnEliminarTodos = new System.Windows.Forms.Button();
             this.btnOrdenarPrecio = new System.Windows.Forms.Button();
             this.btnBuscarMuebles = new System.Windows.Forms.Button();
-            this.btnMostrarRegistrados = new System.Windows.Forms.Button();
-            this.btnMostrarStock = new System.Windows.Forms.Button();
             this.dgMuebles = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblTotalRegistros = new System.Windows.Forms.Label();
             this.lblTotalStock = new System.Windows.Forms.Label();
+            this.tbBuscar = new System.Windows.Forms.TextBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnEliminarMueble = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgMuebles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,16 +139,6 @@
             this.btnMostrarTodos.UseVisualStyleBackColor = true;
             this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
-            // btnEliminarMueble
-            // 
-            this.btnEliminarMueble.Location = new System.Drawing.Point(240, 126);
-            this.btnEliminarMueble.Name = "btnEliminarMueble";
-            this.btnEliminarMueble.Size = new System.Drawing.Size(112, 23);
-            this.btnEliminarMueble.TabIndex = 10;
-            this.btnEliminarMueble.Text = "Eliminar un Mueble";
-            this.btnEliminarMueble.UseVisualStyleBackColor = true;
-            this.btnEliminarMueble.Click += new System.EventHandler(this.btnEliminarMueble_Click);
-            // 
             // btnEliminarTodos
             // 
             this.btnEliminarTodos.Location = new System.Drawing.Point(240, 170);
@@ -156,6 +147,7 @@
             this.btnEliminarTodos.TabIndex = 11;
             this.btnEliminarTodos.Text = "Eliminar Todos";
             this.btnEliminarTodos.UseVisualStyleBackColor = true;
+            this.btnEliminarTodos.Click += new System.EventHandler(this.btnEliminarTodos_Click);
             // 
             // btnOrdenarPrecio
             // 
@@ -165,6 +157,7 @@
             this.btnOrdenarPrecio.TabIndex = 12;
             this.btnOrdenarPrecio.Text = "Ordenar Muebles por Precio";
             this.btnOrdenarPrecio.UseVisualStyleBackColor = true;
+            this.btnOrdenarPrecio.Click += new System.EventHandler(this.btnOrdenarPrecio_Click);
             // 
             // btnBuscarMuebles
             // 
@@ -174,25 +167,7 @@
             this.btnBuscarMuebles.TabIndex = 13;
             this.btnBuscarMuebles.Text = "Buscar Muebles por Nombre";
             this.btnBuscarMuebles.UseVisualStyleBackColor = true;
-            // 
-            // btnMostrarRegistrados
-            // 
-            this.btnMostrarRegistrados.Location = new System.Drawing.Point(370, 126);
-            this.btnMostrarRegistrados.Name = "btnMostrarRegistrados";
-            this.btnMostrarRegistrados.Size = new System.Drawing.Size(158, 23);
-            this.btnMostrarRegistrados.TabIndex = 14;
-            this.btnMostrarRegistrados.Text = "Mostrar Muebles Registrados";
-            this.btnMostrarRegistrados.UseVisualStyleBackColor = true;
-            this.btnMostrarRegistrados.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // btnMostrarStock
-            // 
-            this.btnMostrarStock.Location = new System.Drawing.Point(370, 170);
-            this.btnMostrarStock.Name = "btnMostrarStock";
-            this.btnMostrarStock.Size = new System.Drawing.Size(158, 23);
-            this.btnMostrarStock.TabIndex = 15;
-            this.btnMostrarStock.Text = "Mostrar Muebles en Stock";
-            this.btnMostrarStock.UseVisualStyleBackColor = true;
+            this.btnBuscarMuebles.Click += new System.EventHandler(this.btnBuscarMuebles_Click_1);
             // 
             // dgMuebles
             // 
@@ -206,7 +181,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 365);
+            this.label5.Location = new System.Drawing.Point(35, 377);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 13);
             this.label5.TabIndex = 17;
@@ -215,7 +190,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 389);
+            this.label6.Location = new System.Drawing.Point(35, 401);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 13);
             this.label6.TabIndex = 18;
@@ -224,7 +199,7 @@
             // lblTotalRegistros
             // 
             this.lblTotalRegistros.AutoSize = true;
-            this.lblTotalRegistros.Location = new System.Drawing.Point(174, 365);
+            this.lblTotalRegistros.Location = new System.Drawing.Point(174, 377);
             this.lblTotalRegistros.Name = "lblTotalRegistros";
             this.lblTotalRegistros.Size = new System.Drawing.Size(13, 13);
             this.lblTotalRegistros.TabIndex = 19;
@@ -233,28 +208,66 @@
             // lblTotalStock
             // 
             this.lblTotalStock.AutoSize = true;
-            this.lblTotalStock.Location = new System.Drawing.Point(174, 389);
+            this.lblTotalStock.Location = new System.Drawing.Point(174, 401);
             this.lblTotalStock.Name = "lblTotalStock";
             this.lblTotalStock.Size = new System.Drawing.Size(13, 13);
             this.lblTotalStock.TabIndex = 20;
             this.lblTotalStock.Text = "0";
             // 
+            // tbBuscar
+            // 
+            this.tbBuscar.Location = new System.Drawing.Point(547, 85);
+            this.tbBuscar.Name = "tbBuscar";
+            this.tbBuscar.Size = new System.Drawing.Size(100, 20);
+            this.tbBuscar.TabIndex = 21;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(399, 367);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(128, 23);
+            this.btnLimpiar.TabIndex = 22;
+            this.btnLimpiar.Text = "Limpiar DataGridView";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(572, 401);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 23;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnEliminarMueble
+            // 
+            this.btnEliminarMueble.Location = new System.Drawing.Point(240, 126);
+            this.btnEliminarMueble.Name = "btnEliminarMueble";
+            this.btnEliminarMueble.Size = new System.Drawing.Size(112, 23);
+            this.btnEliminarMueble.TabIndex = 24;
+            this.btnEliminarMueble.Text = "Eliminar Mueble";
+            this.btnEliminarMueble.UseVisualStyleBackColor = true;
+            this.btnEliminarMueble.Click += new System.EventHandler(this.btnEliminarMueble_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 414);
+            this.ClientSize = new System.Drawing.Size(659, 433);
+            this.Controls.Add(this.btnEliminarMueble);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.tbBuscar);
             this.Controls.Add(this.lblTotalStock);
             this.Controls.Add(this.lblTotalRegistros);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgMuebles);
-            this.Controls.Add(this.btnMostrarStock);
-            this.Controls.Add(this.btnMostrarRegistrados);
             this.Controls.Add(this.btnBuscarMuebles);
             this.Controls.Add(this.btnOrdenarPrecio);
             this.Controls.Add(this.btnEliminarTodos);
-            this.Controls.Add(this.btnEliminarMueble);
             this.Controls.Add(this.btnMostrarTodos);
             this.Controls.Add(this.btnRegistrarMuebles);
             this.Controls.Add(this.tbPrecio);
@@ -285,17 +298,18 @@
         private System.Windows.Forms.TextBox tbPrecio;
         private System.Windows.Forms.Button btnRegistrarMuebles;
         private System.Windows.Forms.Button btnMostrarTodos;
-        private System.Windows.Forms.Button btnEliminarMueble;
         private System.Windows.Forms.Button btnEliminarTodos;
         private System.Windows.Forms.Button btnOrdenarPrecio;
         private System.Windows.Forms.Button btnBuscarMuebles;
-        private System.Windows.Forms.Button btnMostrarRegistrados;
-        private System.Windows.Forms.Button btnMostrarStock;
         private System.Windows.Forms.DataGridView dgMuebles;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblTotalRegistros;
         private System.Windows.Forms.Label lblTotalStock;
+        private System.Windows.Forms.TextBox tbBuscar;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnEliminarMueble;
     }
 }
 

@@ -8,6 +8,7 @@ namespace TA_S3.Entities
 {
     internal class Mueble
     {
+        //Definición de Constructor y Atributos (Oliver)
         public Mueble() { }
         
         public int Codigo { get; set; }

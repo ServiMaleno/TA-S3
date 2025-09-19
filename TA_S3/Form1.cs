@@ -25,8 +25,8 @@ namespace TA_S3
 
         private void ActualizarGrid()
         {
-            dgvMuebles.DataSource = null;
-            dgvMuebles.DataSource = listaMuebles;
+            //dgMuebles.DataSource = null;
+            //dgMuebles.DataSource = muebles;
         }
 
         private void MostrarMuebles(List<Mueble> muebles)
@@ -49,11 +49,6 @@ namespace TA_S3
                 muebles.ForEach(mueble => stockTotal += mueble.Stock);
                 lblTotalStock.Text = stockTotal.ToString();
             }
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            MostrarMuebles(muebleService.ListarTodo());
         }
 
 
@@ -84,11 +79,10 @@ namespace TA_S3
                 MessageBox.Show("Código ya registrado");
                 return;
             }
-            
 
             // Mostrar
             MostrarMuebles(muebleService.ListarTodo());
-            limpiarCampos();
+            limpiarCampos();           
         }
 
         public void limpiarCampos()
@@ -100,9 +94,55 @@ namespace TA_S3
             
         }
 
+        private void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+            //mostrar lista
+            MostrarMuebles(muebleService.ListarTodo());
+            limpiarCampos();
+            tbCodigo.Focus();
+        }
+
+        private void btnBuscarMuebles_Click(object sender, EventArgs e)
+        {
+           //No disponible, evento sin funcion
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            dgMuebles.DataSource = null;
+        }
+
+        private void btnBuscarMuebles_Click_1(object sender, EventArgs e)
+        {
+            if (tbBuscar.Text == "")
+            {
+                MessageBox.Show("Ingrese el nombre a buscar");
+                return;
+            }
+
+            String nombre = tbBuscar.Text;
+
+            MostrarMuebles(muebleService.BuscarPorNombre(nombre));
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnEliminarTodos_Click(object sender, EventArgs e)
+        {
+            muebleService.EliminarTodos();
+        }
+
+        private void btnOrdenarPrecio_Click(object sender, EventArgs e)
+        {
+            //Codigo de Ordenamiento
+        }
+
         private void btnEliminarMueble_Click(object sender, EventArgs e)
         {
-            // Validación de seleccion e fila
+            // Validación de seleccion de fila
             if (dgMuebles.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Seleccionar un registro para eliminar");
@@ -118,25 +158,5 @@ namespace TA_S3
             MostrarMuebles(muebleService.ListarTodo());
 
         }
-
-        private void btnMostrarTodos_Click(object sender, EventArgs e)
-        {
-            //mostrar lista
-            MostrarMuebles(muebleService.ListarTodo());
-            limpiarCampos();
-            tbCodigo.Focus();
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            string texto = tbBuscar.Text.Trim().ToLower();
-
-            var resultado = muebleService.ListarTodo()
-                            .Where(m => m.Nombre.ToLower().Contains(texto))
-                            .ToList();
-
-            MostrarMuebles(resultado);
-        }
-
     }
 }

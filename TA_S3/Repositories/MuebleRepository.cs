@@ -9,10 +9,10 @@ namespace TA_S3.Repositories
     internal class MuebleRepository
     {
        
-        //Lista de Muebles
+        //Lista de Muebles (Oliver)
         private List<Mueble> muebles = new List<Mueble>();
 
-        //Validar
+        //Validar (Oliver)
         public bool Existe(String codigo)
         {
             return muebles.Exists(mueble => mueble.Codigo.Equals(codigo));
